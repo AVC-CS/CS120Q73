@@ -5,56 +5,58 @@
 #include "catch.hpp"
 #include "main.hpp"
 // tests for exercise 1
-TEST_CASE("Ex1 findMin() ", "[example]")
+TEST_CASE("Ex1 find_n_th() ", "[example]")
 {
 	const int N = 8;
 	// int number[N];
 	int number[N] = {17, 11, 3, 6, 1, 18, 5, 14};
-	int min;
+	int ret;
 
-	// makeArray(number, N);
 	printArray(number, N);
-	findMin(number, N, 0);
+	ret = find_n_th(number, N, 1);
 	printArray(number, N);
+	cout << "1st value is " << ret << endl;
 	REQUIRE(number[0] == 1);
-	cout << "--------------------------------------------------\n";
+	REQUIRE(ret == 1);
 
-	// REQUIRE(number[idx] == usernum);
-}
-TEST_CASE("Ex2 findmin() ", "[example]")
-{
-	const int N = 8;
-	// int number[N];
-	int number[N] = {17, 11, 3, 6, 1, 18, 5, 14};
-	int min, step;
-
-	// makeArray(number, N);
+	ret = find_n_th(number, N, 2);
 	printArray(number, N);
-	findMin(number, N, 0);
-	printArray(number, N);
-	REQUIRE(number[0] == 1);
-
-	findMin(number, N, 1);
-	printArray(number, N);
+	cout << "2nd value is " << ret << endl;
 	REQUIRE(number[1] == 3);
-}
-TEST_CASE("Ex3 mySort() ", "[example]")
-{
-	const int N = 8;
-	// int number[N];
-	int number[N] = {17, 11, 3, 6, 1, 18, 5, 14};
-	int min, step;
+	REQUIRE(ret == 3);
 
-	// makeArray(number, N);
+	ret = find_n_th(number, N, 8);
 	printArray(number, N);
-	mySort(number, N);
-	printArray(number, N);
-	REQUIRE(number[0] == 1);
-	REQUIRE(number[1] == 3);
-	REQUIRE(number[2] == 5);
-	REQUIRE(number[3] == 6);
-	REQUIRE(number[4] == 11);
-	REQUIRE(number[5] == 14);
-	REQUIRE(number[6] == 17);
+	cout << "8th value is " << ret << endl;
 	REQUIRE(number[7] == 18);
+	REQUIRE(ret == 18);
+
+	cout << "--------------------------------------------------\n";
+}
+TEST_CASE("Ex2 find_n_th() ", "[example]")
+{
+	const int N = 5;
+	// int number[N];
+	int number[N] = {11, 12, 13, 15, 14};
+	int ret;
+
+	printArray(number, N);
+	ret = find_n_th(number, N, 1);
+	printArray(number, N);
+	cout << "1st value is " << ret << endl;
+	REQUIRE(number[0] == 11);
+	REQUIRE(ret == 11);
+
+	ret = find_n_th(number, N, 3);
+	printArray(number, N);
+	cout << "3rd value is " << ret << endl;
+	REQUIRE(number[2] == 13);
+	REQUIRE(ret == 13);
+
+	ret = find_n_th(number, N, 5);
+	printArray(number, N);
+	cout << "5th value is " << ret << endl;
+	REQUIRE(number[4] == 15);
+	REQUIRE(ret == 15);
+	cout << "--------------------------------------------------\n";
 }

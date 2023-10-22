@@ -1,25 +1,11 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
-
 using namespace std;
 
-void makeArray(int[], int);
 void printArray(int[], int);
-void findMin(int[], int, int);
-void mySort(int[], int);
+int find_n_th(int[], int, int);
 
-void findMin(int numbers[], int N, int index)
+int find_n_th(int numbers[], int N, int n_th)
 {
-}
-void mySort(int numbers[], int N)
-{
-}
-void makeArray(int numbers[], int N)
-{
-	srand(time(0));
-	for (int i = 0; i < N; i++)
-		numbers[i] = rand() % 10;
 }
 void printArray(int numbers[], int N)
 {
